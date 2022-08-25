@@ -1,8 +1,8 @@
-
+import Todos from "./components/Todos";
 function App() {
   return (
     <div>
-     hi
+     <Todos items={["Learn Typescript", "Master Typescript"]}/>
     </div>
   );
 }
