@@ -19,10 +19,10 @@ const NewTodo = (props: propsType) => {
         todoTextInputRef.current!.value = ''
     }
 
-    return <form onSubmit={submitHandler}>
-        <label htmlFor="todo-text">Todo text</label>
-        <input type="text" id="todo-text" ref={todoTextInputRef} />
-        <button type="submit">Add Todo</button>
+    return <form className="flex flex-col m-4 space-y-2 w-2/5" onSubmit={submitHandler}>
+        <label htmlFor="todo-text" className="">What would you like to do?</label>
+        <input type="text" id="todo-text" className="rounded-full p-1 text-black" ref={todoTextInputRef} />
+        <button type="submit" className="p-4 bg-myBlue py-2 px-4 rounded-full self-end">Add Todo</button>
     </form>
 }
 

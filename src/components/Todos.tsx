@@ -6,7 +6,7 @@ type todosProps = {
 }
 const Todos = (props : todosProps) => {
   return (
-    <ul>
+    <ul className="flex flex-col space-y-4">
       {props.items.map(item => <TodoItem key={item.id} item={item}/>)}
     </ul>
   );

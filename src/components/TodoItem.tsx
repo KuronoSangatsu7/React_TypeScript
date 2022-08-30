@@ -5,7 +5,7 @@ type propsType = {
 }
 
 const TodoItem = (props : propsType) => {
-    return <li>{props.item.text}</li>
+    return <li className="py-4 px-24 bg-darkBlue rounded-md hover:bg-darkerBlue ">{props.item.text}</li>
 }
 
 export default TodoItem

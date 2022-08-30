@@ -3,6 +3,7 @@ import Todos from "./components/Todos";
 import { Todo } from "./models/todo";
 import { useState } from "react";
 import FullWrapper from "./components/UI/FullWrapper";
+import AppWrapper from "./components/UI/AppWrapper";
 
 const initialTodos = [
   { id: "1", text: "Learn Typescript" },
@@ -19,8 +20,10 @@ function App() {
 
   return (
     <FullWrapper>
+      <AppWrapper>
       <Todos items={todos} />
       <NewTodo newTodoHandler={handleNewTodo} />
+      </AppWrapper>
     </FullWrapper>
   );
 }
