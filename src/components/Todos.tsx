@@ -1,4 +1,5 @@
 import {Todo} from "../models/todo"
+import TodoItem from "./TodoItem";
 
 type todosProps = {
     items: Todo[]
@@ -6,7 +7,7 @@ type todosProps = {
 const Todos = (props : todosProps) => {
   return (
     <ul>
-      {props.items.map(item => <li key={item.id}>{item.text}</li>)}
+      {props.items.map(item => <TodoItem key={item.id} item={item}/>)}
     </ul>
   );
 };
