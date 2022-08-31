@@ -1,15 +1,12 @@
 import {Todo} from "../models/todo"
+import { useTodos } from "../store/todos-context";
 import TodoItem from "./TodoItem";
 
-type todosProps = {
-    items: Todo[],
-    onRemoveTodo: (id: string) => void
-}
-const Todos = (props : todosProps) => {
-
+const Todos = () => {
+  const {items, removeTodo} = useTodos();
   return (
     <ul className="flex flex-col space-y-4">
-      {props.items.map(item => <TodoItem key={item.id} item={item} onRemoveTodo={props.onRemoveTodo.bind(null, item.id)}/>)}
+      {items.map(item => <TodoItem key={item.id} item={item} onRemoveTodo={removeTodo.bind(null, item.id)}/>)}
     </ul>
   );
 };

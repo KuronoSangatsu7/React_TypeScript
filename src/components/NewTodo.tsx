@@ -1,10 +1,8 @@
 import { useRef } from "react";
+import { useTodos } from "../store/todos-context";
 
-type propsType = {
-    newTodoHandler : (text:string) => void
-}
-
-const NewTodo = (props: propsType) => {
+const NewTodo = () => {
+    const {addTodo} = useTodos();
     const todoTextInputRef = useRef<HTMLInputElement>(null)
 
     const submitHandler = (event: React.FormEvent) => {
@@ -14,7 +12,7 @@ const NewTodo = (props: propsType) => {
 
         if(enteredText.trim().length == 0) return
 
-        props.newTodoHandler(enteredText)
+        addTodo(enteredText)
 
         todoTextInputRef.current!.value = ''
     }
