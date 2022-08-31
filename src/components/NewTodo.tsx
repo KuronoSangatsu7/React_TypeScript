@@ -1,7 +1,7 @@
 import { useRef } from "react";
 
 type propsType = {
-    newTodoHandler : (todo:string) => void
+    newTodoHandler : (text:string) => void
 }
 
 const NewTodo = (props: propsType) => {

@@ -8,7 +8,6 @@ import AppWrapper from "./components/UI/AppWrapper";
 const initialTodos = [
   { id: "1", text: "Learn Typescript" },
   { id: "2", text: "Master Typescript" },
-  { id: "3", text: "Speak Typescript" },
 ];
 
 function App() {
@@ -18,10 +17,14 @@ function App() {
     setTodos((prevState) => [...todos, { id: todo, text: todo }]);
   };
 
+  const removeTodoHandler = (todoId: string) => {
+    setTodos((prevState) => prevState.filter(todo => todo.id !== todoId))
+  }
+
   return (
     <FullWrapper>
       <AppWrapper>
-      <Todos items={todos} />
+      <Todos items={todos} onRemoveTodo={removeTodoHandler}/>
       <NewTodo newTodoHandler={handleNewTodo} />
       </AppWrapper>
     </FullWrapper>
